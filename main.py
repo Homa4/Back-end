@@ -1,4 +1,6 @@
-from flask import Flask
+from flask import Flask, jsonify
+import datetime
+
 
 app = Flask(__name__)
 
@@ -6,3 +8,7 @@ app = Flask(__name__)
 def greetings():
     return "Shalom ✋🏽"
 
+@app.route("/healthcheck")
+def healthcheck():
+    date = datetime.now().date()
+    return jsonify({"message":f"{date}"}), 200
