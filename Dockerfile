@@ -8,4 +8,6 @@ RUN python -m pip install -r requirements.txt
 
 COPY . /app
 
+EXPOSE 10000
+
 CMD ["python3", "./app/main.py"]
